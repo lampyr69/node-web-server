@@ -5,7 +5,6 @@ const port = process.env.PORT || 3000
 
 // Creting the app
 const app = express()
-
 hbs.registerPartials(__dirname + '/views/partials/')
 
 // Setting  key/value pair
