@@ -1,6 +1,7 @@
 const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
+const port = process.env.PORT || 3000
 
 // Creting the app
 const app = express()
@@ -24,9 +25,9 @@ app.use((req, res, next) => {
 })
 
 // stop execution by not calling next()
-app.use((req, res, next) => {
-  res.render('maintenance.hbs')
-})
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs')
+// })
 
 // serving static content
 app.use(express.static(__dirname + '/public'))
@@ -60,6 +61,6 @@ app.get('/bad', (req, res) => {
   res.send({ errorMessasge: 'Leider ist hier ein Fehler aufgetreten' })
 })
 
-app.listen(3000, () =>
-  console.log('Server is up on port 3000 -> call http://localhost:3000/')
+app.listen(port, () =>
+  console.log(`Server is up on port ${port} -> call http://localhost:${port}/`)
 )
