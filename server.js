@@ -44,15 +44,14 @@ hbs.registerHelper('screamIt', (text) => {
 app.get('/', (req, res) => {
   //res.send('<h1>Hello Express!</h1>')
   res.render('home.hbs', {
-    pageTitle: 'home',
-    welcomeMessage:
-      'Das ist meine coole Homepage mit dynamischen Inhalt, der per hbs eingestreut wird'
+    pageTitle: 'Home page',
+    welcomeMessage: 'This a simple page using hbs for dynamic content'
   })
 })
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
-    pageTitle: 'about'
+    pageTitle: 'About page'
   })
 })
 
